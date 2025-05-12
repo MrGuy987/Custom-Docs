@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Custom Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sansation&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="images/logo.png">
+</head>
+<body>
+  <h1 class="title">📜 Custom Docs</h1>
+  <div>
+    <input class="texttitle">
+  </div>
+  <div id="toolbar">
+    <button onclick="format('bold')">Bold</button>
+    <button onclick="format('italic')">Italic</button>
+    <button onclick="format('underline')">Underline</button>
+    <button onclick="format('insertUnorderedList')">• List</button>
+    <button onclick="format('insertOrderedList')">1. List</button>
+    <button onclick="createLink()">Link</button>
+
+    <select onchange="setFont(this.value)">
+      <option disabled selected>Font</option>
+      <option value='Arial'>Arial</option>
+      <option value='Times New Roman'>Times New Roman</option>
+      <option value='Courier New'>Courier New</option>
+      <option value='Georgia'>Georgia</option>
+      <option value='Verdana'>Verdana</option>
+    </select>
+
+    <button onclick="format('removeFormat')">Clear</button>
+    <button onclick="savePDF()">Save as PDF</button>
+  </div>
+
+  <div id="editor" contenteditable="true">
+    <p id="placeholder" style="color: gray;">Start writing here...</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
